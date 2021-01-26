@@ -10,9 +10,10 @@ def today_confirm_total():
 
     src = driver.page_source
     soup = BeautifulSoup(src, "html.parser")
+    driver.close()
 
     confirm_num = soup.select_one('p.inner_value')
-    return confirm_num.get_text()
+    print("오늘 확진 환자 수는 총 전일 대비 ", confirm_num.text, "만큼의 변화가 있었습니다.")
 
 
 def today_confirm_national():
@@ -22,12 +23,13 @@ def today_confirm_national():
 
     src = driver.page_source
     soup = BeautifulSoup(src, "html.parser")
+    driver.close()
 
     confirm_num = soup.select('p[class*="_"]')[2]
     res = ''
     for i in confirm_num :
         res += i
-    return res
+    print("오늘 국내 발생 확진자 수는 ", res, "명 입니다.")
 
 
 def today_confirm_oversea():
@@ -37,12 +39,13 @@ def today_confirm_oversea():
 
     src = driver.page_source
     soup = BeautifulSoup(src, "html.parser")
+    driver.close()
 
     confirm_num = soup.select('p[class*="_"]')[3]
     res = ''
     for i in confirm_num :
         res += i
-    return res
+    print("오늘 해외 유입 확진자 수는 ", res, "명 입니다.")
 
 
 def today_release():
@@ -52,12 +55,13 @@ def today_release():
 
     src = driver.page_source
     soup = BeautifulSoup(src, "html.parser")
+    driver.close()
 
     checkup_num = soup.select('span[class*="_"]')[1]
     res = ''
     for i in checkup_num:
         res += i
-    return res
+    print("오늘 격리 해제 수는 전일 대비 ", res, "만큼의 변화가 있었습니다.")
 
 
 def today_quarantine():
@@ -67,12 +71,13 @@ def today_quarantine():
 
     src = driver.page_source
     soup = BeautifulSoup(src, "html.parser")
+    driver.close()
 
     quarantine = soup.select('span[class*="_"]')[2]
     res = ''
     for i in quarantine :
         res += i
-    return res
+    print("오늘 격리중인 사람 수는 전일 대비 ", res, "만큼의 변화가 있었습니다.")
 
 
 def today_dead():
@@ -82,9 +87,10 @@ def today_dead():
 
     src = driver.page_source
     soup = BeautifulSoup(src, "html.parser")
+    driver.close()
 
     dead = soup.select('span[class*="_"]')[3]
     res = ''
     for i in dead :
         res += i
-    return res
+    print("오늘 사망자 수는 전일 대비 ", res, "만큼의 변화가 있었습니다.")
