@@ -7,7 +7,7 @@ sys.stdout = io.TextIOWrapper(sys.stdout.detach(), encoding = 'utf-8')
 sys.stderr = io.TextIOWrapper(sys.stderr.detach(), encoding = 'utf-8')
 
 def overseas_total():
-    driver = webdriver.Chrome('C:\chromedriver.exe')
+    driver = webdriver.Chrome(r'.\chromedriver.exe')
     url = 'http://ncov.mohw.go.kr/bdBoardList_Real.do?brdId=1&brdGubun=11&ncvContSeq=&contSeq=&board_id=&gubun='
     driver.get(url)
 
@@ -17,7 +17,7 @@ def overseas_total():
     return inflow
 
 def overseas_total_new():
-    driver = webdriver.Chrome('C:\chromedriver.exe')
+    driver = webdriver.Chrome(r'.\chromedriver.exe')
     url = 'http://ncov.mohw.go.kr/bdBoardList_Real.do?brdId=1&brdGubun=11&ncvContSeq=&contSeq=&board_id=&gubun='
     driver.get(url)
 
@@ -27,7 +27,7 @@ def overseas_total_new():
     return new
 
 def overseas_china():
-    driver = webdriver.Chrome('C:\chromedriver.exe')
+    driver = webdriver.Chrome(r'.\chromedriver.exe')
     url = 'http://ncov.mohw.go.kr/bdBoardList_Real.do?brdId=1&brdGubun=11&ncvContSeq=&contSeq=&board_id=&gubun='
     driver.get(url)
 
@@ -38,7 +38,7 @@ def overseas_china():
     print("중국 유입 누적 확진자:", china[3].text)
 
 def overseas_asia():
-    driver = webdriver.Chrome('C:\chromedriver.exe')
+    driver = webdriver.Chrome(r'.\chromedriver.exe')
     url = 'http://ncov.mohw.go.kr/bdBoardList_Real.do?brdId=1&brdGubun=11&ncvContSeq=&contSeq=&board_id=&gubun='
     driver.get(url)
 
@@ -49,7 +49,7 @@ def overseas_asia():
     print("중국외아시아 유입 누적 확진자:", asia[6].text)
 
 def overseas_europe():
-    driver = webdriver.Chrome('C:\chromedriver.exe')
+    driver = webdriver.Chrome(r'.\chromedriver.exe')
     url = 'http://ncov.mohw.go.kr/bdBoardList_Real.do?brdId=1&brdGubun=11&ncvContSeq=&contSeq=&board_id=&gubun='
     driver.get(url)
 
@@ -60,7 +60,7 @@ def overseas_europe():
     print("유럽 유입 누적 확진자:", europe[9].text)
 
 def overseas_america():
-    driver = webdriver.Chrome('C:\chromedriver.exe')
+    driver = webdriver.Chrome(r'.\chromedriver.exe')
     url = 'http://ncov.mohw.go.kr/bdBoardList_Real.do?brdId=1&brdGubun=11&ncvContSeq=&contSeq=&board_id=&gubun='
     driver.get(url)
 
@@ -71,7 +71,7 @@ def overseas_america():
     print("미주 유입 누적 확진자:", america[12].text)
 
 def overseas_africa():
-    driver = webdriver.Chrome('C:\chromedriver.exe')
+    driver = webdriver.Chrome(r'.\chromedriver.exe')
     url = 'http://ncov.mohw.go.kr/bdBoardList_Real.do?brdId=1&brdGubun=11&ncvContSeq=&contSeq=&board_id=&gubun='
     driver.get(url)
 
@@ -82,7 +82,7 @@ def overseas_africa():
     print("미주 유입 누적 확진자:", africa[15].text)
 
 def overseas_australia():
-    driver = webdriver.Chrome('C:\chromedriver.exe')
+    driver = webdriver.Chrome(r'.\chromedriver.exe')
     url = 'http://ncov.mohw.go.kr/bdBoardList_Real.do?brdId=1&brdGubun=11&ncvContSeq=&contSeq=&board_id=&gubun='
     driver.get(url)
 
