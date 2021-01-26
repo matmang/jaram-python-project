@@ -92,6 +92,3 @@ def today_dead():
     for i in dead :
         res += i
     return res
-
-
-print(today_confirmOversea())
