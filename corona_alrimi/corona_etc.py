@@ -9,9 +9,9 @@ def corona_by_gender():
 
     src = driver.page_source
     soup = BeautifulSoup(src, "html.parser")
+    driver.close()
 
     confirm = soup.select("td span")
-    print(confirm)
 
     confirm_man = soup.select("td span")[0]
     print('남성 확진자:', confirm_man.text)
@@ -29,6 +29,7 @@ def corona_by_age(age):
 
     src = driver.page_source
     soup = BeautifulSoup(src, "html.parser")
+    driver.close()
     confirm = soup.select("td span")
 
     if age >= 80:
