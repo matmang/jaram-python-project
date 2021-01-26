@@ -1,1 +1,6 @@
-# jaram-python-project
+#jaram-python-project
+===========================
+Korea's Covid-19 Board (대한민국 코로나 바이러스 현황)
+----------------------
+우리나라의 코로나 바이러스 현황을 알려주는 패키지입니다.
+
