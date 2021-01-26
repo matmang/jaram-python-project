@@ -1,14 +1,9 @@
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.by import By
 
 from bs4 import BeautifulSoup
-import time
 
 
-def today_confirmTotal():
+def today_confirm_total():
     driver = webdriver.Chrome(executable_path=r'.\chromedriver.exe')
     url = 'http://ncov.mohw.go.kr/bdBoardList_Real.do?brdId=1&brdGubun=11&ncvContSeq=&contSeq=&board_id=&gubun='
     driver.get(url)
@@ -20,7 +15,7 @@ def today_confirmTotal():
     return confirm_num.get_text()
 
 
-def today_confirmNational():
+def today_confirm_national():
     driver = webdriver.Chrome(executable_path=r'.\chromedriver.exe')
     url = 'http://ncov.mohw.go.kr/bdBoardList_Real.do?brdId=1&brdGubun=11&ncvContSeq=&contSeq=&board_id=&gubun='
     driver.get(url)
@@ -35,7 +30,7 @@ def today_confirmNational():
     return res
 
 
-def today_confirmOversea():
+def today_confirm_oversea():
     driver = webdriver.Chrome(executable_path=r'.\chromedriver.exe')
     url = 'http://ncov.mohw.go.kr/bdBoardList_Real.do?brdId=1&brdGubun=11&ncvContSeq=&contSeq=&board_id=&gubun='
     driver.get(url)
@@ -63,6 +58,7 @@ def today_release():
     for i in checkup_num:
         res += i
     return res
+
 
 def today_quarantine():
     driver = webdriver.Chrome(executable_path=r'.\chromedriver.exe')
