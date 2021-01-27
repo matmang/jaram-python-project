@@ -17,11 +17,11 @@ def total_checkup_result():
     release = " 격리 해제: " + str(cis[1].text)
     dead = "사망: " + str(cis[2].text)
     
-    result = ["누적 검사 현황", total,
+    result = [total,
               checkup_ing, checkup_fin,
               negative, confirm_total,
               quarantine, release,
               dead
             ]
+    print("현재까지 누적 검사 현황은 다음과 같습니다. ", result)
     
-    return result
