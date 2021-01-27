@@ -12,4 +12,4 @@ etc.corona_by_gender()
 ovs.overseas_asia()
 ovs.overseas_china()
 
-print(chk.total_checkup_result())
+chk.total_checkup_result()
