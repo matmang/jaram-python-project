@@ -7,25 +7,25 @@ sys.stdout = io.TextIOWrapper(sys.stdout.detach(), encoding = 'utf-8')
 sys.stderr = io.TextIOWrapper(sys.stderr.detach(), encoding = 'utf-8')
 
 def overseas_total():
-    driver = webdriver.Chrome(r'.\chromedriver.exe')
+    driver = webdriver.Chrome('C:\chromedriver.exe')
     url = 'http://ncov.mohw.go.kr/bdBoardList_Real.do?brdId=1&brdGubun=11&ncvContSeq=&contSeq=&board_id=&gubun='
     driver.get(url)
 
     html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
     inflow = soup.find("td", colspan="2").text
-    return inflow
+    print("해외 유입 누적 확진자 수는 ", inflow ,"명 입니다.")
 
 def overseas_total_new():
-    driver = webdriver.Chrome(r'.\chromedriver.exe')
+    driver = webdriver.Chrome('C:\chromedriver.exe')
     url = 'http://ncov.mohw.go.kr/bdBoardList_Real.do?brdId=1&brdGubun=11&ncvContSeq=&contSeq=&board_id=&gubun='
     driver.get(url)
 
     html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
     new = soup.find("td").text
-    return new
-
+    print("해외 유입 신규 확진자 수는 ", new ,"명 입니다.")
+    
 def overseas_china():
     driver = webdriver.Chrome(r'.\chromedriver.exe')
     url = 'http://ncov.mohw.go.kr/bdBoardList_Real.do?brdId=1&brdGubun=11&ncvContSeq=&contSeq=&board_id=&gubun='
