@@ -14,7 +14,7 @@ def overseas_total():
     html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
     inflow = soup.find("td", colspan="2").text
-    return inflow
+    print("해외 유입 누적 확진자 수는 ", inflow ,"명 입니다.")
 
 def overseas_total_new():
     driver = webdriver.Chrome('C:\chromedriver.exe')
@@ -24,7 +24,7 @@ def overseas_total_new():
     html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
     new = soup.find("td").text
-    return new
+    print("해외 유입 신규 확진자 수는 ", new ,"명 입니다.")
 
 def overseas_china():
     driver = webdriver.Chrome('C:\chromedriver.exe')
